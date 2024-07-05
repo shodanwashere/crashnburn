@@ -1,0 +1,12 @@
+name: "Main Pipeline"
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    name: "🔨 Build"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Build with Maven"
+        run: mvn compile package
+
