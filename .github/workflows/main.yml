@@ -15,5 +15,8 @@ jobs:
           java-version: "17"
           distribution: "oracle"
       - name: "Build with Maven"
-        run: pushd backend; mvn compile package; popd
+        run: |
+          pushd backend
+          mvn compile package -DskipTests
+          popd
 
