@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Build with Maven"
-        run: mvn compile package
+        run: pushd backend; mvn compile package; popd
 
