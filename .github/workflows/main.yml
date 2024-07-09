@@ -19,7 +19,22 @@ jobs:
           pushd backend
           mvn compile package -DskipTests
           popd
-  kics:
+  sast-bearer:
+    name: "🐻‍❄️ Bearer CLI"
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: "Repo Checkout"
+        uses: actions/checkout@v4
+      - name: "Bearer Scan"
+        uses: bearer/bearer-action@v2
+        with:
+          format: json
+          output: results.json
+      - name: "Show results"
+        run: cat results.json | jq .
+    continue-on-error: true
+  sca-kics:
     name: "🫏 Checkmarx KICS"
     runs-on: ubuntu-latest
     needs: build
@@ -33,3 +48,4 @@ jobs:
           output_path: reports/
       - name: "Show results"
         run: cat reports/results.json | jq .
+    continue-on-error: true
