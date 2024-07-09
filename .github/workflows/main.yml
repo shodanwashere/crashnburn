@@ -32,6 +32,7 @@ jobs:
           format: json
           output: results.json
           path: backend/
+        continue-on-error: true
       - name: "Show results"
         run: cat results.json | jq .
     continue-on-error: true
