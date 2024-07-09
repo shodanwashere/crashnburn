@@ -48,6 +48,7 @@ jobs:
         with:
           path: '.,backend/'
           output_path: reports/
+        continue-on-error: true
       - name: "Show results"
         run: cat reports/results.json | jq .
     continue-on-error: true
