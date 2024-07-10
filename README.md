@@ -10,9 +10,9 @@ A small social network for hackers and developers
 ---
 
 Tasks:
-- [ ] Domain model diagram implemented
-- [ ] Model implemented in Spring Data JPA
-- [ ] Data Access via Repos implemented in Spring Data JPA
+- [x] Domain model diagram implemented
+- [x] Model implemented in Spring Data JPA
+- [x] Data Access via Repos implemented in Spring Data JPA
 - [ ] Business Logic Implemented in Spring Boot
 - [ ] RESTful API Implemented in Spring Boot
 - [ ] Frontend Framework Picked Out
