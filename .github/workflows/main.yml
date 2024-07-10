@@ -3,6 +3,7 @@ on:
   push:
   workflow_dispatch:
 permissions:
+  security-events: write
   actions: read
 jobs:
   build:
