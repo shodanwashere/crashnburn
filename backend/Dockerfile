@@ -1,4 +1,4 @@
-FROM maven AS build
+FROM maven@sha256:7a3388321715e15d86f6b540deadeb5cf3e19ac939eda6b94e5e44c681782e9d AS build
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
