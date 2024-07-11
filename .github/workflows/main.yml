@@ -70,10 +70,12 @@ jobs:
         run: |
           VERSION=$(curl -s https://jeremylong.github.io/DependencyCheck/current.txt)
           curl -Ls "https://github.com/jeremylong/DependencyCheck/releases/download/v$VERSION/dependency-check-$VERSION-release.zip" \
-            --output dependency-check.zip
+            --output ../dependency-check.zip
+          pushd ..
           unzip dependency-check.zip
+          popd
       - name: "Dependency Check Scan"
-        run: ./dependency-check/bin/dependency-check.sh --out results.sarif --scan ./backend --format SARIF --nvdApiKey ${{ secrets.NVD_API_SECRET }}
+        run: ../dependency-check/bin/dependency-check.sh --out results.sarif --scan . --format SARIF --nvdApiKey ${{ secrets.NVD_API_SECRET }}
       - name: "Upload to GitHub Code Scanning"
         uses: github/codeql-action/upload-sarif@v3
         with:
