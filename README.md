@@ -16,3 +16,7 @@ Tasks:
 - [ ] Business Logic Implemented in Spring Boot
 - [ ] RESTful API Implemented in Spring Boot
 - [ ] Frontend Framework Picked Out
+
+## Status
+
+![status1 june2024](status.jpeg)
